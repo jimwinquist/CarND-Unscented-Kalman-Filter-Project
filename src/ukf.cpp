@@ -53,16 +53,16 @@ UKF::UKF() {
   weights_ = VectorXd::Constant(2 * n_aug_ + 1, 1);
 
   // Laser measurement noise standard deviation position1 in m
-  std_laspx_ = 0.15;
+  std_laspx_ = 0.05;
 
   // Laser measurement noise standard deviation position2 in m
-  std_laspy_ = 0.15;
+  std_laspy_ = 0.05;
 
   // Radar measurement noise standard deviation radius in m
   std_radr_ = 0.3;
 
   // Radar measurement noise standard deviation angle in rad
-  std_radphi_ = 0.0175;
+  std_radphi_ = 0.0025;
 
   // Radar measurement noise standard deviation radius change in m/s
   std_radrd_ = 0.1;
