@@ -65,6 +65,15 @@ public:
   ///* Augmented state dimension
   int n_aug_;
 
+  ///* Prediction dimension
+  int n_z_;
+
+  ///* Measurement dimension radar
+  int n_z_radar_;
+
+  ///* Measurement dimension lidar
+  int n_z_lidar_;
+
   ///* Sigma point spreading parameter
   double lambda_;
 
@@ -108,6 +117,12 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
-};
 
+  MatrixXd AugmentedSigmaPoints();
+
+  void SigmaPointPrediction(MatrixXd Xsig_aug, double delta_t);
+
+  void PredictMeanAndCovariance();
+
+};
 #endif /* UKF_H */
