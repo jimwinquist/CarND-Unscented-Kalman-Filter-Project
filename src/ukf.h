@@ -65,6 +65,9 @@ public:
   ///* Augmented state dimension
   int n_aug_;
 
+  ///* Sigma points
+  int n_sig_;
+
   ///* Prediction dimension
   int n_z_;
 
@@ -82,6 +85,12 @@ public:
 
   ///* the current NIS for laser
   double NIS_laser_;
+
+  ///* laser covariance matrix
+  MatrixXd R_laser_;
+
+  ///* radar covariance matrix
+  MatrixXd R_radar_;
 
   /**
    * Constructor
